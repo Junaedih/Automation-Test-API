@@ -1,17 +1,16 @@
-package apiauto;
+package com.jun.stepdef;
 
+import io.cucumber.java.en.Given;
 import io.restassured.RestAssured;
-import io.restassured.module.jsv.JsonSchemaValidator;
 import org.hamcrest.Matchers;
 import org.json.JSONObject;
 import org.testng.annotations.Test;
 
-import java.io.File;
 import java.util.HashMap;
 
 import static io.restassured.RestAssured.given;
 
-public class testReqres {
+public class testReqres2 {
 
     @Test
     public void TC_001_GET_ListUsersPerPage() {
@@ -73,8 +72,10 @@ public class testReqres {
                 .header("Content-Type", "application/json")
                 .header("Accept", "application/json")
                 .body(bodyObj.toString())
+
                 .when()
                 .post("https://reqres.in/api/users")
+
                 .then().log().all()
                 .assertThat().statusCode(201)
                 .assertThat().body("name", Matchers.equalTo(valueName))
