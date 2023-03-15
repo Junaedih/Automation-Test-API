@@ -34,7 +34,7 @@ steps:
         
 #install gradlew
     - name : setup gradlew
-      run : chmod +x gradlew
+      run : chmod +x ./gradlew
       
     # execute gradle command for running cucumber test
     - name : Execute Test
