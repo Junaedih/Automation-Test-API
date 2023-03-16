@@ -16,7 +16,7 @@ on:
 
 
 jobs:
-  Run-Automation-Test-Web-UI:
+  Run-Automation-Test-API:
 
     runs-on: ubuntu-latest
 
@@ -28,10 +28,10 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         
-    #- name: Build with Gradle
-    #  uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
-    #  with:
-    #    arguments: build
+    - name: Build with Gradle
+      uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+      with:
+        arguments: build
     
      #install gradlew
     - name : setup gradlew
